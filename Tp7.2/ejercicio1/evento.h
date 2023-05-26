@@ -30,6 +30,7 @@ class Evento{
     double calcularCosto() const;
     void escribirInfoContacto() const;
     bool estaDisponible() const;
+    double getPrecio();
 };
 
 #endif

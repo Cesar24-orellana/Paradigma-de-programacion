@@ -99,3 +99,7 @@ bool Evento::estaDisponible() const{
     
     //return this->disponible<actual;
 }
+
+double Evento::getPrecio(){
+    return this->precioBase;
+}
