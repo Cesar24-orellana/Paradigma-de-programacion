@@ -50,5 +50,5 @@ montoNombre([],Z) :- Z is 0.
 montoNombre([X|Y], Z) :- montoNombre(Y,Z1), precio(X,T), Z is T + Z1.
 
 eliminarGolosina([],X):- X = [].
-eliminarGolosina([X|Y], T) :- producto(Z,X), Z \= golosina, 
+eliminarGolosina([X|Y], T) :- producto(Z,X), Z \= golosina, eliminarGolosina(Y,T1), T = [X| T1], !.
 eliminarGolosina([X|Y], T) :- eliminarGolosina(Y,T).
