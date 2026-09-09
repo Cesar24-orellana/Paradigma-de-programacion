@@ -42,7 +42,7 @@ hija(Y,X) :- progenitor(Y,X), femenino(X).
 abuelo(X,Y):- progenitor(Z,X), progenitor(Y,Z), masculino(Y).
 abuela(X,Y):- progenitor(Z,X), progenitor(Y,Z), femenino(Y).
 
-hermanos(Y,X) :- padreDe(Z,Y), progenitor(Z,X).
+hermanos(Y,X) :- padreDe(Z,Y), progenitor(Z,X), X \= Y.
 
 primo(Y,X) :- padreDe(Z,Y), hermanos(Z,T), hijo(T,X).
 prima(Y,X) :- padreDe(Z,Y), hermanos(Z,T), hija(T,X).
