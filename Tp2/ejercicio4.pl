@@ -14,3 +14,7 @@ menorDigito(N,M,X) :- N < 10, N > M, X is M, !.
 %                                                        menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y < M, X is Y, !. 
 menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y < M, menorDigito(N // 10, Y,X).
 menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y >= M, menorDigito(N // 10, M,X).
+
+
+primerosNumeros(0,[]) :- !.
+primerosNumeros(N,L) :- X is N - 1, primerosNumeros(X,R), append(R,[N], L).
