@@ -18,3 +18,13 @@ menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y >= M, menorDigito(N // 10, M,X).
 
 primerosNumeros(0,[]) :- !.
 primerosNumeros(N,L) :- X is N - 1, primerosNumeros(X,R), append(R,[N], L).
+
+
+% - - - -   PUNTO b   - - - - - -
+
+CantElement([],0).
+
+CantElement([_|X],C) :- CantElement(X,C1), C is C1 + 1.
+
+SumaElement([],0).
+SumaElement([Y|X],N) :- SumaElement(X,N1), N is Y + N1.
