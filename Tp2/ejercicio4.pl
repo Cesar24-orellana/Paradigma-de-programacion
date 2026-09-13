@@ -1,0 +1,10 @@
+contarDigitos(N,C) :- N < 10, C is 1.
+contarDigitos(N,C) :- N >= 10, X is N // 10, contarDigitos(X,S), C is S + 1.
+
+ProductoDigitos(N, P) :- N < 10, P is N.
+ProductoDigitos(N,P) :- N >= 10, X is N // 10, Y is N mod 10, ProductoDigitos(X, S), S is Y * S.
+
+tieneCero(N) :- N < 10, N \=  0, !.
+tieneCero(N) :- N < 10, N = 0, !.
+tieneCero(N) :- N >= 10 D is N mod 10,  D \= 0, tieneCero(N // 10).
+
