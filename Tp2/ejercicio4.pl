@@ -6,5 +6,11 @@ ProductoDigitos(N,P) :- N >= 10, X is N // 10, Y is N mod 10, ProductoDigitos(X,
 
 tieneCero(N) :- N < 10, N \=  0, !.
 tieneCero(N) :- N < 10, N = 0, !.
-tieneCero(N) :- N >= 10 D is N mod 10,  D \= 0, tieneCero(N // 10).
+tieneCero(N) :- N >= 10, D is N mod 10, D = 0, !.
+tieneCero(N) :- N >= 10, D is N mod 10,  D \= 0, tieneCero(N // 10).
 
+menorDigito(N,M,X) :- N < 10, N < M, X is N,!.
+menorDigito(N,M,X) :- N < 10, N > M, X is M, !.
+%                                                        menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y < M, X is Y, !. 
+menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y < M, menorDigito(N // 10, Y,X).
+menorDigito(N,M,X) :- N >= 10, Y is N mod 10, Y >= M, menorDigito(N // 10, M,X).
