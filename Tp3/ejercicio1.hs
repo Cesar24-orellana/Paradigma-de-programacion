@@ -4,7 +4,13 @@ misterio1 x
     | x == 1 = 1
     | otherwise = 2*x + misterio1 (x - 1) - 1
 
-{-  misterio2 recibe un numero n suma los caracteres del numero -}
+{-  misterio2 recibe un numero n suma los digitos del numero -}
+
 misterio2 0 = 0
 misterio2 n = (mod n 10) + misterio2 (div n 10)
 
+contarDigitos 0 = 0
+contarDigitos x = 1 + contarDigitos(div x 10)
+
+productoDigitos 0 = 1
+productoDigitos x = (mod x 10) * productoDigitos(div x 10)
