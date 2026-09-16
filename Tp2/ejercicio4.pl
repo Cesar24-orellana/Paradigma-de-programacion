@@ -1,13 +1,13 @@
 contarDigitos(N,C) :- N < 10, C is 1.
 contarDigitos(N,C) :- N >= 10, X is N // 10, contarDigitos(X,S), C is S + 1.
 
-ProductoDigitos(N, P) :- N < 10, P is N.
-ProductoDigitos(N,P) :- N >= 10, X is N // 10, Y is N mod 10, ProductoDigitos(X, S), S is Y * S.
+productoDigitos(N, P) :- N < 10, P is 1 * N,!.
+productoDigitos(N,P) :- N >= 10, X is N // 10, Y is N mod 10, productoDigitos(X, S), P is Y * S.
 
-tieneCero(N) :- N < 10, N \=  0, !.
-tieneCero(N) :- N < 10, N = 0, !.
+%tieneCero(N) :- N < 10, N \=  0, !.
+%tieneCero(N) :- N < 10, N = 0, !.
 tieneCero(N) :- N >= 10, D is N mod 10, D = 0, !.
-tieneCero(N) :- N >= 10, D is N mod 10,  D \= 0, tieneCero(N // 10).
+tieneCero(N) :- N >= 10, N1 is N // 10, tieneCero(N1).
 
 menorDigito(N,M,X) :- N < 10, N < M, X is N,!.
 menorDigito(N,M,X) :- N < 10, N > M, X is M, !.
@@ -22,11 +22,11 @@ primerosNumeros(N,L) :- X is N - 1, primerosNumeros(X,R), append(R,[N], L).
 
 % - - - -   PUNTO b   - - - - - -
 
-CantElement([],0).
-CantElement([_|X],C) :- CantElement(X,C1), C is C1 + 1.
+cantElement([],0).
+cantElement([_|X],C) :- cantElement(X,C1), C is C1 + 1.
 
-SumaElement([],0).
-SumaElement([Y|X],N) :- SumaElement(X,N1), N is Y + N1.
+sumaElement([],0).
+sumaElement([Y|X],N) :- sumaElement(X,N1), N is Y + N1.
 
 eliminar(_, [], []).
 eliminar(X, [X|Y], R) :- eliminar(X,Y,R), !.
