@@ -14,3 +14,11 @@ contarDigitos x = 1 + contarDigitos(div x 10)
 
 productoDigitos 0 = 1
 productoDigitos x = (mod x 10) * productoDigitos(div x 10)
+
+tieneCeros n
+    | n < 10 = n == 0
+    | mod 10 n == 0  = True
+    | otherwise = tieneCeros (div n 10)
+
+encontrarMenor n
+    | 
