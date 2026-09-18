@@ -21,4 +21,5 @@ tieneCeros n
     | otherwise = tieneCeros (div n 10)
 
 encontrarMenor n
-    | 
+    | n < 10 = n
+    | otherwise = min (mod n 10) (encontrarMenor (div n 10))
