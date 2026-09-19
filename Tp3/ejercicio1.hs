@@ -23,3 +23,15 @@ tieneCeros n
 encontrarMenor n
     | n < 10 = n
     | otherwise = min (mod n 10) (encontrarMenor (div n 10))
+
+crearLista 0 = []
+crearLista n = [x| x <- [1..n]]
+
+divisionEntera :: Int -> Int -> (Int, Int)
+divisionEntera n d 
+    | d == 0 = n
+    | otherwise = a n 0
+    where
+        a r c
+        | r < d = (c, r)
+        | otherwise     = a (r - d)(c + 1)
