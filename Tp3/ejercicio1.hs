@@ -27,11 +27,7 @@ encontrarMenor n
 crearLista 0 = []
 crearLista n = [x| x <- [1..n]]
 
-divisionEntera :: Int -> Int -> (Int, Int)
+divisionEntera :: Int -> Int -> Int
 divisionEntera n d 
-    | d == 0 = n
-    | otherwise = a n 0
-    where
-        a r c
-        | r < d = (c, r)
-        | otherwise     = a (r - d)(c + 1)
+    | n < d = 0
+    | otherwise = 1 + divisionEntera (n - d) d
