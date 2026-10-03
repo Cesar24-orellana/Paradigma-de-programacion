@@ -31,7 +31,26 @@ bool Libro :: Crear(int codigo, string titulo, int anio,double precio, string ed
 
 void Libro :: Informacion(){
     cout<<"Datos Del Libro";
-    cout<<"Codigo = "<<ObtenerISBN()<<endl;
+    cout<<"Codigo = "<<Codigo<<endl;
     cout<<"Titulo ="<<Titulo<<endl;
-    
+    cout<<"Año ="<<Anio<<endl;
+    cout<<"Precio Base ="<<PrecioBase<<endl;
+    cout<<"Nombre de la Editorial"<<NombreEditorial<<endl;
+    cout<<"Nombre del Autor"<<NombreAutor<<endl;
+    bestSeller ? cout<<"Es Best Seller"<<endl : cout<<"No es Best Seller"<<endl;
+}
+
+int Libro :: ObtenerISBN(){
+    return Codigo;
+}
+
+bool Libro :: esBestSeller(){
+    return bestSeller;
+}
+
+double Libro :: PrecioImpuesto(){
+    double Total;
+    bestSeller ? Total = PrecioBase*1.1 : Total = PrecioBase;
+    Total *= 1.21;     // Total <-- Total + Total*0.21
+    return Total;
 }
