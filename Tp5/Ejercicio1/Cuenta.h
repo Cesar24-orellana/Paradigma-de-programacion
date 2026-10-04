@@ -19,9 +19,9 @@ using namespace std;
     
     void Cuenta::crear(int num, long titular, double monto){
         if(monto>=0){
-            numero = num;
-            dniTitular = titular;
-            saldo = monto;
+            this->numero = num;
+            this->dniTitular = titular;
+            this->saldo = monto;
         } 
     }
     
