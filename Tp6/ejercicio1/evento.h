@@ -14,9 +14,9 @@ class Evento{
     public:
     Evento();
     Evento( string nomb, string resp, bool disp, double precio, char tipo);    // tipo = {N o I}
-    Evento(const Evento &E);
+    Evento(const Evento &);
     ~Evento();
-    static int getAutonumerico() const; 
+    static int getAutonumerico(); 
     void setResponsable(string responsable);
     void listarInformacion() const;
     float calcularCosto() const;
