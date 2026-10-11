@@ -8,7 +8,7 @@ class Evento{
     string responsable;
     bool disponible;
     double precioBase;
-    static double IVA;  // lleva const en el cpp
+    static const double IVA;  // lleva const en el cpp
     char tipoEvento;    // {N, I}
 
     public:

@@ -54,3 +54,25 @@ void Evento::setResponsable(string responsable){
     this->responsable = responsable;
 }
 
+void Evento::listarInformacion() const{
+    cout<<"Datos del Evento "<<autonumerico<<endl;
+    cout<<"Codigo = "<<codigo<<endl;
+    cout<<"Nombre = "<<nombre<<endl;
+    cout<<"Responsable = "<<responsable<<endl;
+    disponible? cout<<"Disponible"<<endl : cout<<"No Disponible"<<endl;
+    cout<<"Precio Base = "<<precioBase<<endl;
+    cout<<"Tipo = "<<tipoEvento<<endl;
+}
+
+float Evento::calcularCosto() const{
+    double precio = 0, costo = 0;
+    if (disponible){
+        if(tipoEvento == 'I'){
+            precio = precioBase*1.30;
+        }else{
+            precio = precioBase;
+        }
+        costo = precio*(1+IVA);
+    }
+    return costo;
+}
