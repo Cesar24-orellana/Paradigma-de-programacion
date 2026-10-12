@@ -15,7 +15,8 @@ Evento :: Evento(){
     this->responsable = "--";
     this->disponible = false;
     this->precioBase = 0;
-    this->tipoEvento = 's';    
+    this->tipoEvento = 's';
+    cout<<"- - - Objeto Inicializado - - -"<<endl;
 }
 Evento :: Evento( string nomb, string resp, bool disp, double precio, char tipo){
     Evento::autonumerico ++;
@@ -25,6 +26,7 @@ Evento :: Evento( string nomb, string resp, bool disp, double precio, char tipo)
     this->disponible = disp;
     this->precioBase = precio;
     this->tipoEvento = tipo;
+    cout<<"- - - Objeto Creado - - -"<<endl;
 }
 
 Evento :: Evento(const Evento &E){
@@ -35,6 +37,7 @@ Evento :: Evento(const Evento &E){
     this->disponible = E.disponible;
     this->precioBase = E.precioBase;
     this->tipoEvento = E.tipoEvento;
+    cout<<"- - - Objeto Copiado - - -"<<endl;
 }
 
 Evento :: ~Evento(){
@@ -44,6 +47,7 @@ Evento :: ~Evento(){
     disponible = false;
     precioBase = 0;
     tipoEvento = 's';
+    cout<<"- - - Objeto Destruido - - -"<<endl;
 }
 
 int Evento :: getAutonumerico(){
@@ -55,24 +59,22 @@ void Evento::setResponsable(string responsable){
 }
 
 void Evento::listarInformacion() const{
-    cout<<"Datos del Evento "<<autonumerico<<endl;
+    cout<<"- - - Datos del Evento - - -"<<endl;
     cout<<"Codigo = "<<codigo<<endl;
     cout<<"Nombre = "<<nombre<<endl;
     cout<<"Responsable = "<<responsable<<endl;
     disponible? cout<<"Disponible"<<endl : cout<<"No Disponible"<<endl;
     cout<<"Precio Base = "<<precioBase<<endl;
     cout<<"Tipo = "<<tipoEvento<<endl;
+    cout<<""<<endl;
 }
 
 float Evento::calcularCosto() const{
-    double precio = 0, costo = 0;
+    double precio = 0;
     if (disponible){
-        if(tipoEvento == 'I'){
-            precio = precioBase*1.30;
-        }else{
-            precio = precioBase;
-        }
-        costo = precio*(1+IVA);
+        if(tipoEvento == 'I') precio = precioBase*1.30;
+        else precio = precioBase;
     }
+    double costo = precio*(1+IVA);
     return costo;
 }
