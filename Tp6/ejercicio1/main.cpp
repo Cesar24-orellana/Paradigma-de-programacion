@@ -12,9 +12,22 @@ int main(){
     e2->listarInformacion();
     e3->listarInformacion();
 
+    cout<<"- - - Llamado a los metodos - - -"<<endl;
+    e1->getAutonumerico();
+    e2->getAutonumerico();
+    e3->getAutonumerico();
+
+    e1->setResponsable("Juan Garcia");
+    e1->listarInformacion();
+
+    double costo = e2->calcularCosto();
+    cout<<"Costo del Evento 2"<<endl;
+    cout<<"Costo Iva = "<<costo<<endl;
+
     e1->~Evento();
     e2->~Evento();
     e3->~Evento();
     
+    getchar();
     return 0;
 }

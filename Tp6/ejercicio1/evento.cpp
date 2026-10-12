@@ -56,6 +56,7 @@ int Evento :: getAutonumerico(){
 
 void Evento::setResponsable(string responsable){
     this->responsable = responsable;
+    cout<<"Nuevo Responsable asignado al Evento "<<Evento::codigo<<endl;
 }
 
 void Evento::listarInformacion() const{
@@ -70,6 +71,7 @@ void Evento::listarInformacion() const{
 }
 
 float Evento::calcularCosto() const{
+    cout<<"Calculando Costo del Evento "<<Evento::codigo<<endl;
     double precio = 0;
     if (disponible){
         if(tipoEvento == 'I') precio = precioBase*1.30;
