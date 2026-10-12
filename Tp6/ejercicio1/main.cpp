@@ -2,6 +2,11 @@
 using namespace std;
 #include "evento.cpp"
 
+//  Agregar al task para que compile todos los archivos 
+//  Reemplazar ${file}
+//  Por "${fileDirname}/*.cpp"
+
+
 int main(){
     Evento *e1, *e2, *e3;
     e1 = new Evento();
