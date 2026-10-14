@@ -41,10 +41,18 @@ filtrarLista1LCompr xs n = [x | x <- xs, x /= n]
 invertirLista [] = []
 invertirLista l = lista [] l
     where 
-        | lista li [] = li                      -- Si la lista original esta vacia, devuelve el acumulador
-        | lista li (x:xs) = lista (x:li) xs     -- Toma la cabeza de la lista y la pone en frente del acumulador
+        lista li [] = li                      -- Si la lista original esta vacia, devuelve el acumulador
+        lista li (x:xs) = lista (x:li) xs     -- Toma la cabeza de la lista y la pone en frente del acumulador
 
 -- e. subLista1 recibe una lista y un número natural n y retorna una lista con los primeros n elementos de la lista dada. No utilice take.
 
 subLista1 [] n = []
 subLista1 (x:xs) n = if (n > 0) then [x] ++ subLista1 xs (n - 1) else []
+
+-- f. subLista2 recibe una lista y un número natural n y retorna una lista sin los primeros n elementos de la lista dada. No utilice drop.
+
+subLista2 [] n = []
+subLista2 (x:xs) n = if (n > 0) then subLista2 xs (n- 1) else (x:xs)
+
+-- g. intersección recibe dos listas y devuelve una nueva lista con los elementos que tienen en común las listas dadas
+
