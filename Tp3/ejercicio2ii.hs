@@ -71,3 +71,8 @@ subLista3 (x1:xs) x n = if n > 0
         else subLista3 xs x (n - 1)
     else []
 
+{-i. verificar recibe un predicado p (un predicado es una función que devuelve un valor booleano) y
+una lista de elementos xs y devuelve True si todos los elementos de la lista satisfacen el
+predicado, caso contrario retorna False.-}
+
+-- i. Realice una versión con Guards
