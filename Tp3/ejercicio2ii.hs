@@ -56,6 +56,18 @@ subLista2 (x:xs) n = if (n > 0) then subLista2 xs (n- 1) else (x:xs)
 
 -- g. intersección recibe dos listas y devuelve una nueva lista con los elementos que tienen en común las listas dadas
 
--- interseccion [] [] = []
-interseccion l1 l2 = if (null l1 or null l2) then [] 
-interseccion (x1 : xs1) (x2:xs2) = if (x1 == x2) then x1 ++ interseccion (xs1 xs2) else interseccion (xs1 xs2) 
+interseccion [] _ = []
+interseccion xs ys = [x | x <- xs, elem x ys] 
+
+{- h. subLista2 recibe una lista numérica, un número entero x, un número natural n y retorna una lista
+con los primeros n elementos de la lista dada que sean mayores que x. Utilice Pattern Matching. -}
+
+subLista3 :: [Integer] -> Integer -> Integer -> [Integer]
+subLista3 [] _ _ = []
+subLista3 _ _ 0 = []
+subLista3 (x1:xs) x n = if n > 0 
+    then if x1 > x 
+        then x1 : subLista3 xs x (n-1) 
+        else subLista3 xs x (n - 1)
+    else []
+
