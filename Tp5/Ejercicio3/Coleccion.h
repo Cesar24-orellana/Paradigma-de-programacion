@@ -16,7 +16,7 @@ private:
 public:
     bool reservarMemoria(unsigned int n);
     bool redimensionar();
-    Coleccion crearColeccion(unsigned int n = 10);
+    void crearColeccion(unsigned int n = 10);
     void agregar(item x);
     unsigned int capacidad();
     item &getElemento( unsigned int p);
