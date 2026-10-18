@@ -19,7 +19,7 @@ public:
     Coleccion crearColeccion(unsigned int n = 10);
     void agregar(item x);
     unsigned int capacidad();
-    item &elemento( unsigned int p);
+    item &getElemento( unsigned int p);
     unsigned int cantidad();
     void borrar( unsigned int p);
     void borrar();

@@ -3,7 +3,7 @@
 using namespace std;
 
 bool Coleccion ::reservarMemoria(unsigned int n){
-    Coleccion::elemento = new (std::nothrow) item[n];
+    elemento = new (std::nothrow) item[n];
     if(elemento == nullptr) return false;
     max = n;
     indice = 0;
