@@ -1,3 +1,5 @@
+#ifndef Coleccion_h
+#define Coleccion_h
 #include <iostream>
 using namespace std;
 
@@ -12,7 +14,7 @@ private:
     int indice;
 
 public:
-    bool reservarMemoria( unsigned int n);
+    bool reservarMemoria(unsigned int n);
     bool redimensionar();
     Coleccion crearColeccion(unsigned int n = 10);
     void agregar(item x);
@@ -22,7 +24,6 @@ public:
     void borrar( unsigned int p);
     void borrar();
     void destruir();
-    bool operator==(Coleccion V1, Coleccion V2);
+    //bool operator==(Coleccion V1, Coleccion V2);
 };
-
-
+#endif
