@@ -11,7 +11,7 @@ bool Coleccion ::reservarMemoria(unsigned int n){
 bool Coleccion :: redimensionar(){
     item *nuevo = new item[5+max];
     if(nuevo == NULL) return false;
-    for (int i = 0; i < max; i++)
+    for (unsigned int i = 0; i < max; i++)
     {
         nuevo[i] = elemento[i];
     }
@@ -76,7 +76,7 @@ void Coleccion :: destruir(){
 bool Coleccion :: operator==(Coleccion V){
     if(capacidad() != V.capacidad()) return false;
     if(cantidad() != V.cantidad()) return false;
-    for (int i = 0; i < capacidad(); i++)
+    for (unsigned int i = 0; i < capacidad(); i++)
     {
         if (getElemento(i) != V.getElemento(i))
         {

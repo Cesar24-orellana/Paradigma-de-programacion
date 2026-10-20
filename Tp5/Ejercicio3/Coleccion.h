@@ -10,8 +10,8 @@ class Coleccion
 {
 private:
     item *elemento;
-    int max;
-    int indice;
+    unsigned int max;
+    unsigned int indice;
 
 public:
     bool reservarMemoria(unsigned int n);
