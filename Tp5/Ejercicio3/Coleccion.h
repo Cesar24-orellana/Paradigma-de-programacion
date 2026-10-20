@@ -24,6 +24,6 @@ public:
     void borrar( unsigned int p);
     void borrar();
     void destruir();
-    //bool operator==(Coleccion V1, Coleccion V2);
+    bool operator==(Coleccion V);
 };
 #endif

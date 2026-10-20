@@ -44,9 +44,44 @@ void Coleccion :: agregar(item x){
     }
     
 }
-    unsigned int capacidad();
-    item &getElemento( unsigned int p);
-    unsigned int cantidad();
-    void borrar( unsigned int p);
-    void borrar();
-    void destruir();
+
+unsigned int Coleccion :: capacidad(){
+    return this->max;
+}
+
+item & Coleccion::getElemento( unsigned int p){
+    if(indice > p) return elemento[p];
+    return elemento[0];
+}
+
+unsigned int Coleccion :: cantidad(){
+    return indice;
+}
+
+void Coleccion :: borrar( unsigned int p){
+    if(p < max) elemento[p] = Indefinido;
+}
+
+void Coleccion :: borrar(){
+    indice = 0;
+}
+
+void Coleccion :: destruir(){
+    if(elemento != nullptr) {
+        delete[] elemento;
+        indice = 0;
+    }
+}
+
+bool Coleccion :: operator==(Coleccion V){
+    if(capacidad() != V.capacidad()) return false;
+    if(cantidad() != V.cantidad()) return false;
+    for (int i = 0; i < capacidad(); i++)
+    {
+        if (getElemento(i) != V.getElemento(i))
+        {
+            return false;
+        }
+    }
+    return true;
+}
