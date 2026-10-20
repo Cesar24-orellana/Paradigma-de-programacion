@@ -13,3 +13,29 @@ item obtenerMayor(Coleccion V){
     }
     return mayor;
 }
+
+// SOBRECARGA OPERADOR DE INSERCION DE FLUJO ( << )
+ostream& operator<<(ostream& salida, Coleccion &V){
+
+	// Completarx
+	cout<<'\n';
+	item valor;
+	for (int i = 0; i < V.capacidad(); i++)
+	{
+		valor = V.getElemento(i);
+		salida<<valor<<endl;
+	}
+
+	return salida;
+}
+
+// SOBRECARGA OPERADOR DE EXTRACCION DE FLUJO ( >> )
+istream& operator>>(istream& entrada, Coleccion &V){
+	int valor;
+	for(unsigned int i=0;i<V.capacidad();i++){
+		entrada>>valor;
+		V.agregar(valor);
+	}
+	return entrada;
+}
+
