@@ -49,8 +49,9 @@ void Arreglo::escribir(){
 
 Arreglo::~Arreglo() {
 	/*...COMPLETAR...*/
-	for(int i = 0; i<cantidad();i++){
+	for(unsigned int i = 0; i<indice;i++){
 		delete this->elementos[i];
 	}
 	this->indice=0;
+	cout<<"Arreglo Destruido"<<endl;
 }
