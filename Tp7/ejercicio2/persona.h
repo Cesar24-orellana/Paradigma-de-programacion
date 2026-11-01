@@ -10,11 +10,10 @@ private:
 public:
     Persona();
     Persona(string,double);
+    Persona(Persona&);
     ~Persona();
     string getNombre();
     double informacionDeContacto();
 };
 
-Persona::~Persona()
-{
-}
+
