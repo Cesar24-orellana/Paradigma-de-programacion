@@ -2,23 +2,19 @@
 
 using namespace std;
 
-class persona
+class Persona
 {
 private:
     string nombre;
     double telefono;
 public:
-    persona();
-    persona(string,double);
-    ~persona();
+    Persona();
+    Persona(string,double);
+    ~Persona();
     string getNombre();
     double informacionDeContacto();
 };
 
-persona::persona(/* args */)
-{
-}
-
-persona::~persona()
+Persona::~Persona()
 {
 }
