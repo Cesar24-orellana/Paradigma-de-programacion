@@ -31,3 +31,4 @@ string Persona ::getNombre(){
 double Persona ::informacionDeContacto(){
     return this->telefono;
 }
+

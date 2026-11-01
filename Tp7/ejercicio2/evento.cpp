@@ -14,12 +14,12 @@ Evento :: Evento(){     // En constructor por defecto hace falta inicializar??
     this->codigo = 0;
     this->nombre = "--";
     //this->responsable = Persona();   // Ya no es necesario?
-    this->disponible = false;
+    //this->disponible = false;
     this->precioBase = 0;
     this->tipoEvento = 's';
     cout<<"- - - Objeto Inicializado - - -"<<endl;
 }
-Evento :: Evento(string nomb, Persona *resp, bool disp, double precio, char tipo){
+Evento :: Evento(string nomb, Persona *resp, Fecha disp, double precio, char tipo){
     Evento::autonumerico ++;
     this->codigo = autonumerico;
     this->nombre = nomb;
@@ -45,7 +45,7 @@ Evento :: ~Evento(){
     codigo = 0;
     nombre = "--";
     responsable->~Persona();
-    disponible = false;
+    //disponible = false;
     precioBase = 0;
     tipoEvento = 's';
     cout<<"- - - Objeto Destruido - - -"<<endl;
@@ -63,7 +63,7 @@ void Evento::setResponsable(Persona *responsable){
 float Evento::calcularCosto() const{
     cout<<"Calculando Costo del Evento "<<Evento::codigo<<endl;
     double precio = 0;
-    if (disponible){
+    if (estaDisponible()){
         if(tipoEvento == 'I') precio = precioBase*1.30;
         else precio = precioBase;
     }
@@ -71,20 +71,24 @@ float Evento::calcularCosto() const{
     return costo;
 }
 
-void Evento ::escribirInfoContacto(){
+void Evento ::escribirInfoContacto() const{
     cout<<"Informacion del Responsable"<<endl;
     cout<<"Nombre : "<<this->responsable->getNombre()<<endl;
     cout<<"Contacto : "<<this->responsable->informacionDeContacto()<<endl;
 }
 
-void Evento::listarInformacion() /* const */{ 
+void Evento::listarInformacion() const{ 
     cout<<"- - - Datos del Evento - - -"<<endl;
     cout<<"Codigo = "<<codigo<<endl;
     cout<<"Nombre = "<<nombre<<endl;
     cout<<"Informacion del Responsable"<<endl;
     escribirInfoContacto();
-    disponible? cout<<"Disponible"<<endl : cout<<"No Disponible"<<endl;
+    estaDisponible()? cout<<"Disponible"<<endl : cout<<"No Disponible"<<endl;
     cout<<"Precio Base = "<<precioBase<<endl;
     cout<<"Tipo = "<<tipoEvento<<endl;
     cout<<""<<endl;
+}
+
+bool Evento :: estaDisponible() const{
+    Fecha actual;
 }

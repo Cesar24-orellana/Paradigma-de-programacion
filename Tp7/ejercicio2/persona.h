@@ -1,3 +1,6 @@
+#ifndef PERSONA_H_
+#define PERSONA_H_
+
 #include<iostream>
 
 using namespace std;
@@ -16,4 +19,4 @@ public:
     double informacionDeContacto();
 };
 
-
+#endif
