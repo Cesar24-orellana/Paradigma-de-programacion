@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-#include "evento.cpp"
+#include "evento.h"
+#include "persona.h"
+#include "Fecha.h"
 
 //  Agregar al task para que compile todos los archivos 
 //  Reemplazar ${file}
@@ -9,8 +11,12 @@ using namespace std;
 
 int main(){
     Evento *e1, *e2, *e3;
+    Persona p1, p2;
+    p1 =  Persona("Mario Juarez", 3815554465);
+    Fecha f1;
+    f1 = Fecha(25,8,2027);
     e1 = new Evento();
-    e2 = new Evento("Festival del Caballo","Mario Juarez", true,520000.00,'I');
+    e2 = new Evento("Festival del Caballo",&p1, f1,520000.00,'I');
     e3 = new Evento(*e2);
 
     e1->listarInformacion();
@@ -22,7 +28,8 @@ int main(){
     e2->getAutonumerico();
     e3->getAutonumerico();
 
-    e1->setResponsable("Juan Garcia");
+    p2 = Persona("Juan Martinez", 3814443333);
+    e1->setResponsable(&p2);
     e1->listarInformacion();
 
     double costo = e2->calcularCosto();

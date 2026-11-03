@@ -114,16 +114,18 @@ int operator-(Fecha fecha1, Fecha fecha2){
 //Devuelve true si fecha1 es menor que fecha2
 bool operator<(Fecha fecha1, Fecha fecha2){
 	bool valor=true;
-	if(fecha1.getAnio() > fecha2.getAnio())
-		valor =false;
-	else
-		if(fecha1.getAnio() == fecha2.getAnio())
+	if(fecha1.getAnio() > fecha2.getAnio()) valor =false;
+	else{
+		if(fecha1.getAnio() == fecha2.getAnio()){
 			if(fecha1.getMes() > fecha2.getMes())
 				valor= false;
-			else
-				if(fecha1.getMes() == fecha2.getMes())
-					if(fecha1.getDia() > fecha2.getDia())
-						valor= false;
+			else{
+				if(fecha1.getMes() == fecha2.getMes()){
+					if(fecha1.getDia() > fecha2.getDia()) valor= false;
+				}
+			}
+		}
+	}
 	return valor;
 
 }

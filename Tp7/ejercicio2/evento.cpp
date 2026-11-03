@@ -91,4 +91,5 @@ void Evento::listarInformacion() const{
 
 bool Evento :: estaDisponible() const{
     Fecha actual;
+    return this->disponible<actual;
 }
