@@ -25,7 +25,7 @@ class Evento{
     static int getAutonumerico(); 
     void setResponsable(Persona*);
     void listarInformacion() const;
-    float calcularCosto() const;
+    double calcularCosto() const;
     void escribirInfoContacto() const;
     bool estaDisponible() const;
 };

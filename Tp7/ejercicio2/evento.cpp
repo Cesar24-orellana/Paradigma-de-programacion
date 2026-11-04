@@ -2,6 +2,7 @@
 #include <iostream>
 #include "evento.h"
 #include "persona.h"
+#include "Fecha.h"
 
 using namespace std;
 
@@ -60,13 +61,15 @@ void Evento::setResponsable(Persona *responsable){
     cout<<"Nuevo Responsable asignado al Evento "<<Evento::codigo<<endl;
 }
 
-float Evento::calcularCosto() const{
+double Evento::calcularCosto() const{
     cout<<"Calculando Costo del Evento "<<Evento::codigo<<endl;
-    double precio = 0;
+    double precio;
     if (estaDisponible()){
         if(tipoEvento == 'I') precio = precioBase*1.30;
         else precio = precioBase;
     }
+    cout<<precioBase<<endl;
+    cout<<precio<<endl;
     double costo = precio*(1+IVA);
     return costo;
 }
@@ -89,7 +92,10 @@ void Evento::listarInformacion() const{
     cout<<""<<endl;
 }
 
-bool Evento :: estaDisponible() const{
+bool Evento::estaDisponible() const{
     Fecha actual;
-    return this->disponible<actual;
+    actual.setFechaActual();
+    return actual < this->disponible;
+    
+    //return this->disponible<actual;
 }
