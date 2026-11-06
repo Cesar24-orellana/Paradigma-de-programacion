@@ -5,10 +5,10 @@
 using namespace std;
 
 double EventoNacional ::getPrecio(){
-    return this->precioBase;
+    return this->Evento::getPrecio();
 }
 
 
-EventoNacional::EventoNacional(/* args */)
-{
-}
+EventoNacional::EventoNacional(string nomb, Persona *resp, Fecha disp, double precio, char tipo) : Evento(nomb,resp,disp,precio,tipo)
+{}
+

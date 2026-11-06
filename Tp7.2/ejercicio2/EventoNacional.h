@@ -1,16 +1,17 @@
-    #include<iostream>
+#ifndef EVENTONACIONAL_H_
+#define EVENTONACIONAL_H_
 
-    #include "evento.h"
+#include<iostream>
 
-    using namespace std;
+#include "evento.h"
+
+using namespace std;
 
 class EventoNacional : protected Evento
 {
-private:
-    /* data */
 public:
-    EventoNacional();
-    ~EventoNacional();
+    EventoNacional(string, Persona*, Fecha, double, char);
+    //~EventoNacional();
     double getPrecio();
 };
 
@@ -18,3 +19,5 @@ public:
 EventoNacional::~EventoNacional()
 {
 }
+
+#endif
