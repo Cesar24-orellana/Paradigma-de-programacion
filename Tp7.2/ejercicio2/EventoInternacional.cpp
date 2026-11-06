@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const double EventoInternacional :: INCREMENTO = 0.30
+const double EventoInternacional :: INCREMENTO = 0.30;
 
 double EventoInternacional :: getPrecio()
 {
