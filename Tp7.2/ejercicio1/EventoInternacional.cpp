@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const double EventoInternacional :: INCREMENTO = 0.30;
+const float EventoInternacional :: INCREMENTO = 0.30;
 
 double EventoInternacional :: getPrecio()
 {
@@ -12,9 +12,9 @@ double EventoInternacional :: getPrecio()
     //return this->precioBase*(1+this->INCREMENTO);
 }
 
-void EventoInternacional :: Informacion()
+void EventoInternacional :: listarInformacion()
 {
-    this->Evento::Informacion();
+    this->Evento::listarInformacion();
     // cout<<"Informacion del Responsable"<<endl;
     // cout<<"Nombre : "<<this->responsable->getNombre()<<endl;
     // cout<<"Contacto : "<<this->responsable->informacionDeContacto()<<endl;

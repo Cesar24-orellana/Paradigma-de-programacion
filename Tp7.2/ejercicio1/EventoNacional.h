@@ -16,8 +16,4 @@ public:
 };
 
 
-EventoNacional::~EventoNacional()
-{
-}
-
 #endif
