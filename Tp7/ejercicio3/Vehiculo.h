@@ -17,7 +17,7 @@ private:
     double calcularIncremento(double);
 public:
     Vehiculo();
-    Vehiculo();
+    Vehiculo(string, int,double,double);
     ~Vehiculo();
     void escribirInfo();
     double getTarifa();

@@ -1,8 +1,8 @@
 #include "Vehiculo.h"
 
-Vehiculo::Vehiculo(/* args */)
-{
-}
+Vehiculo::Vehiculo(){}
+
+Vehiculo::Vehiculo(string patente, int anio,double peso,double tarifa): patente(patente), añoModelo(anio),pesoMax(peso), tarifa(tarifa) {}
 
 void Vehiculo::escribirInfo(){
     cout<<"Datos del Vehiculo"<<endl;
