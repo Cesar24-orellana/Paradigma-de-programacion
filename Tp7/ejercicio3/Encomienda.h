@@ -21,7 +21,7 @@ private:
     Vehiculo vihiculo;
 public:
     Encomienda();
-    Encomienda(string, string,Fecha,Fecha,bool,double,Vehiculo);
+    Encomienda(string, string,Fecha,double,Vehiculo);
     ~Encomienda();
     void escribirInfo();
     void setFechaEntrega(Fecha);

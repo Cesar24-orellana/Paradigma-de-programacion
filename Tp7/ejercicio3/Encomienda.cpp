@@ -3,7 +3,7 @@
 int Encomienda::autonumerico = 0;
 
 Encomienda::Encomienda(){}
-Encomienda::Encomienda(string origen, string destino,Fecha ingreso,Fecha entrega,bool entregado,double peso,Vehiculo rodado): dirOrigen(origen),dirDestino(destino),fechaIngreso(ingreso),fechaEntrega(entrega),entregado(entregado),pesoEncomienda(peso),vihiculo(rodado)
+Encomienda::Encomienda(string origen, string destino,Fecha ingreso,double peso,Vehiculo rodado): dirOrigen(origen),dirDestino(destino),fechaIngreso(ingreso),pesoEncomienda(peso),vihiculo(rodado)
     {
         this->autonumerico++;
         this->codigoEncomienda = this->autonumerico;
