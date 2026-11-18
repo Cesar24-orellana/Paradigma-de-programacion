@@ -11,6 +11,7 @@ class EventoNacional : protected Evento
 {
 public:
     EventoNacional(string, Persona*, Fecha, double, char);
+    ~EventoNacional() override;
     double getPrecio();
     void listarInformacion(){
         this->Evento::listarInformacion();

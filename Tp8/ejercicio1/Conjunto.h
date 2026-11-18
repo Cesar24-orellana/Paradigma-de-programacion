@@ -25,6 +25,7 @@ class Conjunto{
 	bool esConjuntoVacio();
 	void escribir();
 
+    friend class IteradorDeConjunto;
 };
 
 item *Conjunto::indefinido = new item;

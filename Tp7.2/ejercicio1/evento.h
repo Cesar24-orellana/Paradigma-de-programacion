@@ -23,7 +23,7 @@ class Evento{
     Evento();
     Evento(string, Persona*, Fecha, double, char);    // tipo = {N o I}
     Evento(const Evento &);
-    ~Evento();
+    virtual ~Evento();
     static int getAutonumerico(); 
     void setResponsable(Persona*);
     void listarInformacion() const;
