@@ -9,7 +9,7 @@ class Vehiculo
 {
 private:
     string patente;
-    int añoModelo;
+    int anioModelo;
     double pesoMax;
     const double INCREMENTO = 0.25;
     double tarifa;

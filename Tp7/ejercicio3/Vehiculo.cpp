@@ -2,12 +2,12 @@
 
 Vehiculo::Vehiculo(){}
 
-Vehiculo::Vehiculo(string patente, int anio,double peso,double tarifa): patente(patente), añoModelo(anio),pesoMax(peso), tarifa(tarifa) {}
+Vehiculo::Vehiculo(string patente, int anio,double peso,double tarifa): patente(patente), anioModelo(anio),pesoMax(peso), tarifa(tarifa) {}
 
 void Vehiculo::escribirInfo(){
     cout<<"Datos del Vehiculo"<<endl;
     cout<<"Patente: "<<patente<<endl;
-    cout<<"Año del Modelo: "<<añoModelo<<endl;
+    cout<<"Año del Modelo: "<<anioModelo<<endl;
     cout<<"Peso Maximo: "<<pesoMax<<endl;
     cout<<"Tarifa: "<<tarifa<<endl;
     cout<<""<<endl;
