@@ -129,3 +129,8 @@ bool operator<(Fecha fecha1, Fecha fecha2){
 	return valor;
 
 }
+
+//true si las fechas son iguales
+bool operator==(Fecha fecha1, Fecha fecha2){
+	return (fecha1.getAnio() == fecha2.getAnio()) && (fecha1.getMes() == fecha2.getMes()) && (fecha1.getDia() == fecha2.getDia());
+}
