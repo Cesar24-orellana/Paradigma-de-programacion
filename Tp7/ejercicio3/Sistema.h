@@ -8,7 +8,7 @@ using namespace std;
 
 class Sistema
 {
-    vector<Encomienda> encomiendas;
+    vector<Encomienda*> encomiendas;
 public:
     Sistema();
     ~Sistema();
@@ -24,8 +24,8 @@ Sistema::Sistema(/* int cantidad = 0 */)
 
 Sistema::~Sistema()
 {
-    for(Encomienda *e : encomiendas){
-        delete e;
+    for(size_t i = 0; i < encomiendas.size(); i++){
+        delete encomiendas[i];
     }
     cout<<"Sistema Destruido"<<endl;
 }
