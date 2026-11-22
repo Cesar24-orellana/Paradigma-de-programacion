@@ -18,7 +18,7 @@ class Conjunto{
 	int indice;
 	item elementos[MAX];
 
- public:
+    public:
 	Conjunto();
 	void agregar(item X);
 	int cantidad();
@@ -32,6 +32,7 @@ item *Conjunto::indefinido = new item;
 
 Conjunto::Conjunto(){
 	this->indice=0;
+	cout<<"Objeto Conjunto Creado"<<endl;
 }
 
 void Conjunto::agregar(item X){
@@ -46,6 +47,7 @@ void Conjunto::agregar(item X){
 		if(i == this->indice){
 			this->elementos[this->indice] = X;
 			this->indice++;
+			cout<<"Elemento Agregado a la coleecion"<<endl;
 		}
 	}
 }
