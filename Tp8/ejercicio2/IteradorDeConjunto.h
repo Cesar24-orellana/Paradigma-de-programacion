@@ -12,7 +12,7 @@ class IteradorDeConjunto
     const Conjunto<item> &lista;
     int posicion;
     public:
-    IteradorDeConjunto(const Conjunto& C): lista(C)
+    IteradorDeConjunto(const Conjunto<item>& C): lista(C)
     {
         posicion = 0;
     }

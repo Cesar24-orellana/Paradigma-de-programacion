@@ -10,6 +10,7 @@
 using namespace std;
 // typedef int item;
 
+template<class item>
 class IteradorDeConjunto;
 
 template<class item>
@@ -26,7 +27,8 @@ class Conjunto{
 	bool esConjuntoVacio();
 	void escribir();
 
-    friend class IteradorDeConjunto;
+
+    friend class IteradorDeConjunto<item>;
 };
 template<class item>
 item *Conjunto<item>::indefinido = new item;
