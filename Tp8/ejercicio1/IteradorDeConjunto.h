@@ -28,7 +28,7 @@ class IteradorDeConjunto
     }
     
     item elemento(){
-        return lista.elemento[posicion];
+        return lista.elementos[posicion];
     }
 };
 
