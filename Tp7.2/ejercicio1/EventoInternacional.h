@@ -15,6 +15,7 @@ class EventoInternacional : protected Evento
     public:
     EventoInternacional();
     EventoInternacional(string, Persona*, Fecha, double, char, string);    // tipo = {N o I}
+    ~EventoInternacional() override;
     void listarInformacion();
     double getPrecio();
 };

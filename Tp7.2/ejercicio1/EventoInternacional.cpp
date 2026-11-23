@@ -26,3 +26,7 @@ EventoInternacional:: EventoInternacional(string nomb, Persona *resp, Fecha disp
 {
     this->paisDeOrigen = pais;
 }    // tipo = {N o I}
+
+EventoInternacional::~EventoInternacional(){
+    cout<<"Evento Internacional Eliminado"<<endl;
+}
