@@ -1,30 +1,35 @@
-#include<iostream>
-#include<vector>
+//============================================================================
+// PARADIGMAS DE PROGRAMACION - 2025
+// P2 - T1
+// Vuelo.h
+// Apellido y Nombre:
+//============================================================================
 
-#include "Cliente.h"
+#ifndef VUELO_H_
+#define VUELO_H_
+#include <iostream>
+#include <vector>
 #include "Fecha.h"
+#include "Cliente.h"
 
-using namespace std;
+// --------------------------------------------------------------------------
+// COMPLETAR Y/O MODIFICAR IMPLEMENTACION SEGUN CORRESPONDA EN CADA CASO
+// --------------------------------------------------------------------------
 
-class Vuelo
-{
-    protected:
-    int codigo;
-    Fecha fecha;
-    double montoPasaje;
-    vector<Cliente> pasajeros;
-    static double CalcularImpuestos()
-    {
-        int cantidad = 0;
-        for(Cliente *p : pasajeros)
-        {
-            if(!p->esViajeroFrecuente())
-            {
-                cantidad += 1;
-            }
-        }
-        float monto = cantidad*montoPasaje;
-        return monto;
-    }
+class Vuelo {
+	int codigo;
+	Fecha fecha;
+	double montoPasaje;
 
+protected:
+	double calcularImpuestos();
+	double calcularMontoPasajes();
+
+public:
+	Vuelo(int, Fecha, double);
+	int getCodigo();
+	double calcularMontoNeto();
+	virtual ~Vuelo();
 };
+
+#endif /* VUELO_H_ */
