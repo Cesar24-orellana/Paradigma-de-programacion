@@ -1,18 +1,19 @@
+#ifndef REVISTA_H_
+#define REVISTA_H_
+
+#include "Publicacion.h"
+
 #include <iostream>
 using namespace std;
 
-class Revista
+class Revista : public Publicacion
 {
 private:
-    int Codigo;
-    string Titulo;
-    int Anio;
-    double PrecioBase;
-    int Numero;
-    int Volumen;
-    string Tema;
+    int numero;
+    int volumen;
+    string tema;
 public:
-    bool Crear(int codigo, string titulo, int anio, double precio, int num, int vol, string tema);
+    Revista(int codigo, string titulo, int anio, double precio, int num, int vol, string tema);
     void Informacion();
     int ObtenerISSN();
     string ObtenerCampo();
@@ -20,42 +21,36 @@ public:
     double PrecioVenta();
 };
 
-bool Revista :: Crear(int codigo, string titulo, int anio, double precio, int num, int vol, string tema){
-    if(codigo>=0 && anio>0 && precio>0 && num>0 && vol>0) return false;
-    Codigo = codigo;
-    Titulo = titulo;
-    Anio = anio;
-    PrecioBase = precio;
-    Numero = num;
-    Volumen = vol;
-    Tema = tema;
-}
+Revista :: Revista(int codigo, string titulo, int anio, double precio, int num, int vol, string tema): Publicacion(codigo,titulo, precio, anio), numero(num), volumen(vol), tema(tema) {}
+
 void Revista :: Informacion(){
     cout<<"Datos de la Revista";
-    cout<<"Codigo = "<<Codigo<<endl;
-    cout<<"Titulo ="<<Titulo<<endl;
-    cout<<"Año ="<<Anio<<endl;
-    cout<<"Precio Base ="<<PrecioBase<<endl;
-    cout<<"Numero ="<<Numero<<endl;
-    cout<<"Volumen ="<<Volumen<<endl;
-    cout<<"Campo (Donde esta Dirigido) ="<<Tema<<endl;
+    cout<<"Codigo = "<<Publicacion::codigo<<endl;
+    cout<<"Titulo ="<<Publicacion::titulo<<endl;
+    cout<<"Año ="<<Publicacion::anio_edicion<<endl;
+    cout<<"Precio Base ="<<Publicacion::precioBase<<endl;
+    cout<<"Numero ="<<numero<<endl;
+    cout<<"Volumen ="<<volumen<<endl;
+    cout<<"Campo (Donde esta Dirigido) ="<<tema<<endl;
 }
 
 int Revista :: ObtenerISSN(){
-    return Codigo;
+    return Publicacion::codigo;
 }
 
 string Revista :: ObtenerCampo(){
-    return Tema;
+    return tema;
 }
 
 int Revista :: antiguedad(int anioActual){
-    return anioActual - Anio;
+    return anioActual - Publicacion::anio_edicion;
 }
 
 double Revista :: PrecioVenta(){
     double total;
-    (5 < antiguedad(2026))? total = PrecioBase*1.15 : total = PrecioBase;
+    (5 < antiguedad(2026))? total = Publicacion::precioBase*1.15 : total = Publicacion::precioBase;
     total = total*1.21;
     return total;
 }
+
+#endif
