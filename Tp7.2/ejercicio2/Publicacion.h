@@ -10,18 +10,19 @@ class Publicacion
 private:
     static float INCREMENTO;
 protected:
+    int codigo;
     string titulo;
     float precioBase;
     int anio_edicion;
 public:
-    Publicacion(string, float, int);
+    Publicacion(int,string, float, int);
     virtual ~Publicacion();
     void agregarIVA(float);
     virtual void mostrarInformacion();
     virtual float precioFinal() = 0;
 };
 
-Publicacion::Publicacion(string titulo, float precio, int anio) : titulo(titulo), precioBase(precio), anio_edicion(anio) 
+Publicacion::Publicacion(int codigo,string titulo, float precio, int anio) : codigo(codigo),titulo(titulo), precioBase(precio), anio_edicion(anio) 
 {
     cout<<"Publicacion Creada"<<endl;
 }
