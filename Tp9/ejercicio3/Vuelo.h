@@ -20,7 +20,7 @@ class Vuelo {
 	int codigo;
 	Fecha fecha;
 	double montoPasaje;
-
+	vector<Cliente*> clientes; 
 protected:
 	double calcularImpuestos();
 	double calcularMontoPasajes();
