@@ -6,7 +6,6 @@ using namespace std;
 class Libro : public Publicacion
 {
 private:
-    int Codigo;
     string NombreEditorial;
     string NombreAutor;
     bool bestSeller;
@@ -18,11 +17,11 @@ public:
     double PrecioImpuesto();
 };
 
-Libro :: Libro(int codigo, string titulo, int anio,double precio, string editorial, string autor, bool BS) : Publicacion(titulo, precio, anio), Codigo(codigo), NombreEditorial(editorial), NombreAutor(autor), bestSeller(BS) {} 
+Libro :: Libro(int codigo, string titulo, int anio,double precio, string editorial, string autor, bool BS) : Publicacion(codigo,titulo, precio, anio), NombreEditorial(editorial), NombreAutor(autor), bestSeller(BS) {} 
 
 void Libro :: Informacion(){
     cout<<"Datos Del Libro";
-    cout<<"Codigo = "<<Codigo<<endl;
+    cout<<"Codigo = "<<Publicacion::codigo<<endl;
     cout<<"Titulo ="<<Publicacion::titulo<<endl;
     cout<<"Año ="<<Publicacion::anio_edicion<<endl;
     cout<<"Precio Base ="<<Publicacion::precioBase<<endl;
@@ -32,7 +31,7 @@ void Libro :: Informacion(){
 }
 
 int Libro :: ObtenerISBN(){
-    return Codigo;
+    return Publicacion::codigo;
 }
 
 bool Libro :: esBestSeller(){
